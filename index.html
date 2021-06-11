@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='style.css' />
+    <!--load animate.css from CDN-->
+    <link
+    rel='stylesheet'
+    href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.4.0/animate.min.css'
+    />
+
+    <!--load WOW js from CDN-->
+    <script src="https://kit.fontawesome.com/650b7f0e40.js" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js'></script>
+    <title>Portfolio</title>
+</head>
+<body>
+
+  <header class="wow zoomIn" id='head'>
+      <div class="logo">
+          <h1>TOMASZ</h1>
+      </div>
+      <nav class="navigation">
+          <ul>
+             <li><a href="#home" class='home'>Home</a></li>
+             <li><a href="#skills" class='skills'>Skills</a></li>
+             <li><a href="#projects" class='nav-projects'>Projects</a></li>
+             <li><a href="#contact" class='contact'>Contact</a></li>
+          </ul>
+      </nav>
+      <div class="hamburger">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+          <div class="line line3"></div>
+      </div>
+  </header>
+
+  <div class='main-header' id='home' >
+      <div class="header-content wow zoomIn"  style='animation-delay: 600ms' >
+         <h1 class="header_main_content_h1" >
+         HEY,<br />
+         I'm<span>Tomasz</span><br />
+         Web Developer
+        </h1>
+      </div>
+  </div>
+  <div class='skills-section' id='skills'>
+      <div class="skill-section-heading">
+          <h1 class="wow zoomIn">SKILLS</h1>
+      </div>
+      <div class="skills">
+          <div class="skills-logo wow zoomIn" style='animation-delay: 300ms'>
+            <img src='html5.png' alt='html5-logo' id='html'/>
+            <img src='css-logo.png' alt='css-logo' width=160px id='css'/> 
+            <img src='react-logo.png' alt='react-logo' id='react'/> 
+            <img src='javascript-logo.png' alt='javascript-logo' id='java'/>         
+          </div>
+      </div>
+  </div>
+
+  <!-- Projects -->
+
+  <div class="projects-section" id='projects'>
+      <div class="projects-section-heading">
+          <h1 class='wow zoomIn'>PROJECTS</h1>
+      </div>
+      <div class="projects wow zoomIn">
+          <div class='project'>
+            <div class="project-name">
+              <p>Movies app</p>
+            </div>
+            <img src='localhost_3000_ (2).png' alt='movies-app'/>
+            <div class='links'>
+              <a href='raitingmovies.com' class='websitelink'>Website</a>
+              <a href='https://github.com/tomrud88/movies-app.git' class='codelink'>Code</a>
+            </div>
+          </div>
+          <div class='project'>
+            <div class="project-name">
+            <p>Mobile e-commerce</p>
+            </div>
+            <img src='localhost_3000_ (1).png' alt='e-commerce'/>
+          <div class='links'>
+            <a href='https://react-phone-store1988.netlify.app/' class='websitelink'>Website</a>
+            <a href='https://github.com/tomrud88/react-phone-store.git' class='codelink'>Code</a>
+          </div>
+        </div>
+        <div class='project'>
+          <div class="project-name">
+            <p>Travel landing-page</p>
+          </div>
+            <img src='127.0.0.1_5500_index.html (1).png' alt='travel-landing-page'/>
+          <div class='links'>
+            <a href='https://tomrud-travel-landing-page.netlify.app' class='websitelink'>Website</a>
+            <a href='https://github.com/tomrud88/travel-landing-page.git' class='codelink'>Code</a>
+          </div>
+        </div>
+        <div class='project'>
+            <div class="project-name">
+              <p>Game Tic-Tac-Toe</p>
+            </div>
+            <img src='127.0.0.1_5500_index.html (2).png' alt='tic-tac-toe-picture'/>
+          <div class='links'>
+            <a href='https://tomrud88.github.io/Tic-Tac-Toe/' class='websitelink'>Website</a>
+            <a href='https://github.com/tomrud88/Tic-Tac-Toe.git' class='codelink'>Code</a>
+          </div>
+        </div> 
+      </div>
+  </div>
+
+  <!-- Contact -->
+
+  <div class="contact-heading wow zoomIn">
+      <h1>CONTACT</h1>
+  </div>
+  <div class='container wow zoomIn'
+  style='animation-delay:300ms'
+  id='contact'>
+  <ul class='contact-list'>
+  <li><a href='mailto:rthomas8827@gmail.com'><i class="fas fa-at"></i></a>e-mail</li>
+  <li><a href='https://github.com/tomrud88'><i class="fab fa-github"></i></a>GitHub</li>
+  </ul>
+  </div>
+</body> 
+
+  <script>
+      
+window.onscroll = function() {myFunction()};
+function myFunction(){
+    if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50){
+        document.getElementById('head').className = 'sticky';
+    }else{
+        document.getElementById('head').className = '';
+    }
+}
+
+wow = new WOW({
+    boxClass: 'wow',
+    animateClass:'animated',
+    offset:0,
+    mobile:true,
+    live:true,
+});
+wow.init();
+
+//Hamburger Code
+
+
+document.querySelector(".hamburger").addEventListener('click',(e) => {
+    e.preventDefault();
+document.querySelector('.navigation').classList.toggle('active');
+})
+
+const nav = document.querySelector('.navigation');
+
+window.addEventListener('resize', ()=> {
+  if(document.body.clientWidth > 900){
+  nav.classList.remove('active')
+  }
+})
+
+
+document.querySelector(".home").addEventListener('click',(e) => {
+  if(document.body.clientWidth < 900){
+  nav.classList.toggle('active');
+  }
+})
+
+document.querySelector(".skills").addEventListener('click',(e) => {
+  if(document.body.clientWidth < 900){
+ nav.classList.toggle('active');
+  }
+})
+
+document.querySelector(".nav-projects").addEventListener('click',(e) => {
+  if(document.body.clientWidth < 900){
+document.querySelector('.navigation').classList.toggle('active');
+  }
+})
+
+document.querySelector(".contact").addEventListener('click',(e) => {
+  if(document.body.clientWidth < 900){
+document.querySelector('.navigation').classList.toggle('active');
+  }
+})
+
+  </script>
+
+</html>
